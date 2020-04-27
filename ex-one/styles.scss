@@ -1,3 +1,41 @@
-.box{ 
-  color: red($color: #000000);
+$base-color: #006375;
+
+@function increase-value($i) {
+  @return ($i * 0.15)
+}
+
+@for $i from 1 through 4 {
+   .lighten-#{$i} {
+     filter: brightness(1 + increase-value($i))
+   }
+   .darken-#{$i} {
+     filter: brightness(1 - increase-value($i))
+   }
+}
+
+.container-1 {
+  display: grid;
+  grid-template-columns: repeat(9, 100px);
+  align-content: center;
+  gap: 8px;
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    border: 1px #ccc solid;
+    border-radius: 5px;
+    background-color: $base-color;
+
+    &.base-color {
+      background-color: $base-color;
+    }
+
+    .color-box-text {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #d9c000;
+    }
+  }
 }
