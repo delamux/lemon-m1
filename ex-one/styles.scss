@@ -5,21 +5,40 @@ $text-color1: #d9c000;
 $text-color2: #d697ff;
 $text-color3: #e74c3c;
 
+%bg-color-1 {
+  background-color: $base-color1;
+}
+%bg-color-2 {
+  background-color: $base-color2;
+}
+%bg-color-3 {
+  background-color: $base-color3;
+}
+
+%text-color-1 {
+  color: $text-color1;
+}
+%text-color-2 {
+  color: $text-color2;
+}
+%text-color-3 {
+  color: $text-color3;
+}
+
+@mixin set-bg-color($arg) {
+  @extend %bg-color-#{$arg};
+}
+
+@mixin set-text-color($arg) {
+  @extend %text-color-#{$arg};
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 @function increase-value($i) {
   @return ($i * 0.1);
-}
-
-@for $i from 1 through 4 {
-  .lighten-#{$i} {
-    filter: brightness(1 + increase-value($i));
-  }
-  .darken-#{$i} {
-    filter: brightness(1 - increase-value($i));
-  }
 }
 
 .container {
@@ -40,44 +59,27 @@ body {
   }
 }
 
-#container-1 {
-  .box {
-    background-color: $base-color1;
+@for $i from 1 through 4 {
+  .lighten-#{$i} {
+    filter: brightness(1 + increase-value($i));
   }
-
-  &.base-color {
-    background-color: $base-color1;
-  }
-
-  .color-box-text {
-    color: $text-color1;
+  .darken-#{$i} {
+    filter: brightness(1 - increase-value($i));
   }
 }
 
-#container-2 {
-  .box {
-    background-color: $base-color2;
-  }
-
-  &.base-color {
-    background-color: $base-color2;
-  }
-
-  .color-box-text {
-    color: $text-color2;
-  }
-}
-
-#container-3 {
-  .box {
-    background-color: $base-color3;
-  }
-
-  &.base-color {
-    background-color: $base-color3;
-  }
-
-  .color-box-text {
-    color: $text-color3;
+@for $i from 1 through 3 {
+  #container-#{$i} {
+    .box {
+      @include set-bg-color($i);
+    }
+  
+    &.base-color {
+      @include set-bg-color($i);
+    }
+  
+    .color-box-text {
+      @include set-text-color($i);
+    }
   }
 }
