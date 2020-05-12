@@ -2,7 +2,7 @@
 
 $primary-color: #f2f0f0;
 $secondary-color: #474c59;
-$tertiary-color: #f4c227;
+$ternary-color: #f4c227;
 $cuaternary-color: #40370E;
 
 
@@ -24,12 +24,18 @@ body.light-theme {
 
   p {
     font-family: $secondary-font;
-    color: $tertiary-color;
+    color: $ternary-color;
   }
 
   button {
-    background-color: $cuaternary-color;
+    background-color: $secondary-color;
     color: $primary-color;
+    font-family: $secondary-font;
+  }
+
+  button:hover {
+    background-color: $cuaternary-color;
+    color: $ternary-color;
     font-family: $secondary-font;
   }
 

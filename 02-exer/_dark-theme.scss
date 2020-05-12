@@ -32,6 +32,12 @@ body.dark-theme {
     font-family: $secondary-font;
   }
 
+  button:hover {
+    background-color: $secondary-color;
+    color: $primary-color;
+    font-family: $secondary-font;
+  }
+
   .container {
     .text-box {
       @include box-shadow(6px, 6px, 8px, $cuaternary-color);

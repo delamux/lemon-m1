@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+$primary-color: #037E8C;
+$secondary-color: #FFFFFA;
+$ternary-color: #024959;
+
+$font-primary: 'Lato', sans-serif;
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  font-family: $font-primary;
+  flex-direction: column;
+  @media screen and (max-width: 1024px) {
+    align-items: center;
+    justify-content: center;
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+.title {
+  width: 100%;
+}
+
+menu .item:hover {
+  background-color: $ternary-color;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .title {
+    justify-content: center;
+  }
+  .menu {
+    width: 300px;
+  }
+ 
+}
+
+menu {
+  display: flex;
+  background-color: $primary-color;
+  color: $secondary-color;
+  margin: {
+    block-end:0;
+    block-start:0;
+  };
+  padding-inline-start: 0;
+
+  .item {
+    display: flex;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 100%;
+    height: 50px;
+    justify-content: space-around;
+
+    .item {
+      align-items: center;
+      font-size: 1em;
+      padding: 0 100px;
+    }
+  }
+  
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+
+    .item {
+      justify-content: center;
+    }
+  }
+}

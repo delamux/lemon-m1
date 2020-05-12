@@ -10,13 +10,15 @@
 }
 
 body {
-  transition: background-color 0.5s ease;
+  transition: all 0.5s ease;
+  transition-property: background-color, color;
   padding: 0;
   margin: 0;
   display: flex;
 }
 
 button:hover {
+  transition: background-color 0.5s ease;
   cursor: pointer;
 }
 
