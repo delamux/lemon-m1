@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Ubuntu&display=swap");
+
+$primary-color: #f2f0f0;
+$secondary-color: #474c59;
+$tertiary-color: #f4c227;
+$cuaternary-color: #40370E;
+
+
+$primary-font: "Montserrat", sans-serif;
+$secondary-font: "Ubuntu", sans-serif;
+
+body.light-theme {
+  background-color: $primary-color;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $primary-font;
+    color: $secondary-color;
+  }
+
+  p {
+    font-family: $secondary-font;
+    color: $tertiary-color;
+  }
+
+  button {
+    background-color: $cuaternary-color;
+    color: $primary-color;
+    font-family: $secondary-font;
+  }
+
+  .container {
+    .text-box {
+      @include box-shadow(6px, -6px, 8px, $secondary-color);
+      @include border-radius(20px);
+      background-color: $secondary-color;
+      padding: 4%;
+      margin: 4%;
+    }
+  }
+}

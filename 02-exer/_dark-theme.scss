@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Caveat&display=swap");
+
+$primary-color: #5b3547;
+$secondary-color: #efeadd;
+$tertiary-color: #131826;
+$cuaternary-color: #8B677C;
+
+$primary-font: "Anton", sans-serif;
+$secondary-font: "Caveat", cursive;
+
+body.dark-theme {
+  background-color: $primary-color;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $primary-font;
+    color: $secondary-color;
+  }
+
+  p {
+    font-family: $secondary-font;
+    color: $tertiary-color;
+  }
+
+  button {
+    background-color: $cuaternary-color;
+    color: $secondary-color;
+    font-family: $secondary-font;
+  }
+
+  .container {
+    .text-box {
+      @include box-shadow(6px, 6px, 8px, $cuaternary-color);
+      @include border-radius(10px);
+      background-color: $secondary-color;
+      padding: 4%;
+      margin: 4%;
+    }
+  }
+}
