@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+
+$primary-color: #404040;
+$secondary-color: #f2f2f2;
+$ternary-color: #a6a6a6;
+$cuaternary-color: #99bf0f;
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-color: $ternary-color;
+  font-family: "Lato", sans-serif;
+}
+
+h1 {
+  font-size: 1.5em;
+  color: $primary-color;
+}
+
+p {
+  font-weight: 300;
+  padding: 0 8px;
+  font-size: 0.8em;
+  line-height: 1.5em;
+}
+button {
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.container {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  display: grid;
+  background-color: $secondary-color;
+  grid-template-columns: 200px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "picture"
+    "title"
+    "content"
+    "date"
+    "button";
+
+  border: 1px solid darkgray;
+}
+
+.item-picture {
+  grid-area: picture;
+
+  img {
+    max-width: 200px;
+  }
+}
+
+.item-title {
+  padding: 0 8px;
+  grid-area: title;
+  height: 40px;
+}
+.item-content {
+  grid-area: content;
+  min-height: 180px;
+}
+.item-date {
+  grid-area: date;
+  text-align: right;
+
+  span {
+    padding: 0 4px;
+    font-size: 0.7em;
+  }
+  .date {
+    color: $cuaternary-color;
+    font-weight: 300;
+  }
+}
+.item-button {
+  display: flex;
+  justify-content: center;
+  padding: 8px 4px;
+  grid-area: button;
+
+  button {
+    letter-spacing: 0.1em;
+    width: 100%;
+    padding: 8px 20px;
+    color: white;
+    background-color: $cuaternary-color;
+  }
+}
